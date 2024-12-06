@@ -1,0 +1,69 @@
+"use client";
+
+import React, { useState } from "react";
+import LottonownoButton from "@/components/buttons/LottonownoButton";
+import AddEditGameModal from "@/components/modals/AddEditGameModal";
+import LottonownowTable from "@/components/table/LottonownowTable";
+
+const columns = [
+  {
+    Header: "Name",
+    field: "name",
+  },
+  {
+    Header: "Stake Amount",
+    field: "units",
+  },
+  {
+    Header: "Number Of Stakes",
+    field: "amount",
+  },
+  {
+    Header: "Winning Amount",
+    field: "duration",
+  },
+
+  {
+    Header: "Maturity Date",
+    field: "targetDate",
+  },
+  {
+    Header: "Status",
+    field: "planStatus",
+  },
+];
+function page() {
+  const [addNewGame, setAddNewGame] = useState(false);
+  return (
+    <div>
+      <div className="flex justify-end items-end">
+        <LottonownoButton
+          title="Add Game"
+          onClick={() => setAddNewGame(true)}
+        />
+      </div>
+      <AddEditGameModal open={addNewGame} setOpen={setAddNewGame} />
+
+      <section>
+        <p className="text-lg font-semibold text-center text-primary-100">
+          Game Creation
+        </p>
+        <p className="text-sm font-normal text-center text-primary-100">
+          Choose one of the category below to create a game{" "}
+        </p>
+      </section>
+      <section className="my-10">
+        <LottonownowTable
+          title={"All Games"}
+          subTitle={"These are the games that are on the platform"}
+          columns={columns}
+          data={[]}
+          hideActions={false}
+          loading={false}
+        />
+      </section>
+    </div>
+  );
+}
+
+export default page;
