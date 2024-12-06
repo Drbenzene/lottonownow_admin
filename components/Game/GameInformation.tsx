@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { useCategory } from "@/hooks/useCategory";
 import CategoryCard from "@/components/cards/CategoryCard";
