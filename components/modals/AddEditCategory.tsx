@@ -9,6 +9,7 @@ import { FiUpload } from "react-icons/fi";
 import { addCategory, updateCategory } from "@/hooks/useCategory";
 import { toast } from "sonner";
 import { useCategory } from "@/hooks/useCategory";
+import Image from "next/image";
 
 interface AddEditGamesProps {
   open: boolean;
@@ -101,10 +102,12 @@ function AddEditCategory({
                 children={
                   <div className="w-full mt-1 h-80 rounded-lg bg-[#F6F6F7] border border-[#BFBFC0]">
                     {preview ? (
-                      <img
+                      <Image
                         src={preview}
                         alt="product"
                         className="w-full h-full object-cover"
+                        height={100}
+                        width={100}
                       />
                     ) : (
                       <div className=" flex flex-1 justify-center items-center mt-32">
