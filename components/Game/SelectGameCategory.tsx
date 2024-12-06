@@ -36,24 +36,6 @@ function SelectGameCategory() {
             ))}
         </div>
       </div>
-
-      <div className=" flex justify-start space-x-5 w-full bg-white h-32 pl-5 md:pl-10  items-center my-20 ">
-        <LottonownoButton
-          title="Cancel"
-          bgColor="bg-[#F6F6F7]"
-          textColor="text-[#BFBFC0]"
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
-
-        <LottonownoButton
-          title="Continue"
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
-        />
-      </div>
     </section>
   );
 }

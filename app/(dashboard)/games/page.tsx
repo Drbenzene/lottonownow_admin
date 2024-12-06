@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import LottonownoButton from "@/components/buttons/LottonownoButton";
 import AddEditGameModal from "@/components/modals/AddEditGameModal";
 import LottonownowTable from "@/components/table/LottonownowTable";
-
+import { useRouter } from "next/navigation";
 const columns = [
   {
     Header: "Name",
@@ -34,13 +34,11 @@ const columns = [
 ];
 function Page() {
   const [addNewGame, setAddNewGame] = useState(false);
+  const { push } = useRouter();
   return (
     <div>
       <div className="flex justify-end items-end">
-        <LottonownoButton
-          title="Add Game"
-          onClick={() => setAddNewGame(true)}
-        />
+        <LottonownoButton title="Add Game" onClick={() => push("/games/add")} />
       </div>
       <AddEditGameModal open={addNewGame} setOpen={setAddNewGame} />
 

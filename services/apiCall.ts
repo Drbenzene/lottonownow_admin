@@ -1,16 +1,8 @@
 import axios from "axios";
+import local from "next/font/local";
 import { toast } from "sonner";
 // const BASE_API_URL: any = process.env.NEXT_PUBLIC_API_URL;
 const BASE_API_URL: any = process.env.NEXT_PUBLIC_BASE_URL;
-
-interface IAPICall {
-  Url: string;
-  Method: string;
-  Data?: any;
-  timeoutOverride?: any;
-  silent?: boolean;
-  isFormData?: boolean;
-}
 
 export default async function APICall(
   Url: any,
@@ -20,8 +12,7 @@ export default async function APICall(
   timeoutOverride?: number,
   silent?: boolean
 ) {
-  const access_token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4ZjcwNTgxZC04NTBiLTRmOTctOTA0MC02YzY0NDk2YTIzMmQiLCJlbWFpbCI6ImJveWluYm9kZS5hZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3MzM0Njg4MjksImV4cCI6MTczMzU1NTIyOSwiYXVkIjoiUkdGR0hEU0dZR0RTWVVDR0lEUyIsImlzcyI6ImxvdG9ub3dub3cifQ.JTMOmhAky4vX04ks3uLuge0hse_euy6uYmrJHyoTUG4";
+  const access_token = localStorage.getItem("accessToken");
   if (access_token) {
     const authToken = access_token;
     axios.defaults.headers.common["Authorization"] = `Bearer ${authToken}`;

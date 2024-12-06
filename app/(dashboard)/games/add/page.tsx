@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import LottonownoButton from "@/components/buttons/LottonownoButton";
 import GameInformation from "@/components/Game/GameInformation";
+import SelectGameCategory from "@/components/Game/SelectGameCategory";
 
 interface FormValues {
   name: string;
@@ -84,15 +85,15 @@ function CreateGame() {
             touched,
           }) => (
             <form onSubmit={handleSubmit}>
-              {/* <SelectGameCategory /> */}
-              <GameInformation
+              <SelectGameCategory />
+              {/* <GameInformation
                 values={values}
                 errors={errors}
                 touched={touched}
                 setValues={setValues}
                 handleChange={handleChange}
                 handleBlur={handleBlur}
-              />
+              /> */}
 
               <div className=" flex justify-start space-x-5 w-full bg-white h-32 pl-5 md:pl-10  items-center my-20 ">
                 <LottonownoButton

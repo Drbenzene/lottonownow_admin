@@ -7,10 +7,11 @@ import * as Yup from "yup";
 import { signIn } from "@/hooks/useSignIn";
 import { useRouter } from "next/navigation";
 import SubmitButton from "@/components/buttons/SubmitButton";
+import { toast } from "sonner";
 
 const LottonownowSignin = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(false);
-  const { push } = useRouter();
+  const { push, replace } = useRouter();
   return (
     <>
       <div className="flex-col items-center w-full min-w-[400px]">
@@ -32,7 +33,11 @@ const LottonownowSignin = () => {
             password: Yup.string().required("Required"),
           })}
           onSubmit={async (values, { setSubmitting }) => {
-            await signIn(values);
+            const res = await signIn(values);
+            toast.success("Welcome Back");
+            if (res) {
+              replace("/overview");
+            }
             setSubmitting(false);
           }}
         >
