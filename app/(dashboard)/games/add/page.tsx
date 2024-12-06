@@ -1,10 +1,7 @@
 "use client";
 
 import React from "react";
-import { useCategory } from "@/hooks/useCategory";
-import CategoryCard from "@/components/cards/CategoryCard";
-import SelectGameCategory from "@/components/Game/SelectGameCategory";
-import { Formik, FormikHelpers, FormikValues } from "formik";
+import { Formik } from "formik";
 import * as Yup from "yup";
 import LottonownoButton from "@/components/buttons/LottonownoButton";
 import GameInformation from "@/components/Game/GameInformation";
@@ -62,6 +59,19 @@ function CreateGame() {
             winner4Amount: 0,
             winner5Amount: 0,
           }}
+          validationSchema={Yup.object({
+            name: Yup.string().required("Required"),
+            timer: Yup.string().required("Game Timer Is required"),
+            noOfStakes: Yup.number()
+              .required("Number of Stakes is required")
+              .min(3),
+            minimumStakeAmount: Yup.number().required(
+              "Stake Amount is required"
+            ),
+            numberOfWinners: Yup.number()
+              .required("Required")
+              .min(1, "At least one winner is required"),
+          })}
           onSubmit={() => {}}
         >
           {({

@@ -32,7 +32,7 @@ const columns = [
     field: "planStatus",
   },
 ];
-function page() {
+function Page() {
   const [addNewGame, setAddNewGame] = useState(false);
   return (
     <div>
@@ -66,4 +66,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -1,15 +1,10 @@
 "use client";
 
-import {
-  Dialog,
-  Popover,
-  Transition,
-  TransitionChild,
-} from "@headlessui/react";
+import { Dialog, Transition, TransitionChild } from "@headlessui/react";
 import { BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { Fragment, useEffect, useState, useTransition } from "react";
+import { Fragment, useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { PiUsersThree } from "react-icons/pi";
 import { LiaWalletSolid } from "react-icons/lia";
@@ -17,8 +12,6 @@ import Image from "next/image";
 import { SlSupport } from "react-icons/sl";
 import { MdOutlineMonitorHeart } from "react-icons/md";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { FaArrowUpRightDots } from "react-icons/fa6";
-import { SlGameController } from "react-icons/sl";
 import { IoGameControllerOutline } from "react-icons/io5";
 import { GiWallet } from "react-icons/gi";
 import { LuUsers } from "react-icons/lu";

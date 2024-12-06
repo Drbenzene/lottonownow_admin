@@ -1,5 +1,6 @@
 // src/components/AuthLayout.js
 import Image from "next/image";
+import Link from "next/link";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,7 +12,7 @@ export default function AuthLayout({ children }: LayoutProps) {
       //   style={{ backgroundImage: "url(/images/auth_bg.svg)" }}
       className="relative bg-[#F2C94C3D] bg-cover bg-center flex flex-col md:flex-row h-screen"
     >
-      <a href="/">
+      <Link href="/">
         <Image
           src="/images/logo_transparent.svg"
           alt="lottonownow"
@@ -19,7 +20,7 @@ export default function AuthLayout({ children }: LayoutProps) {
           height={79.01}
           className="absolute z-50 cursor-pointer top-6 md:top-12 left-4 md:left-16 w-fit"
         />
-      </a>
+      </Link>
 
       {/* Form Section */}
       <section className="flex-1 scrollbar-hide flex items-center w-full justify-center container">

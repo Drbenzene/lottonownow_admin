@@ -1,5 +1,5 @@
 import { Dialog, Transition, TransitionChild } from "@headlessui/react";
-import React, { Fragment, useRef } from "react";
+import React, { Fragment } from "react";
 import { FaTimes } from "react-icons/fa";
 
 interface ModalProps {
