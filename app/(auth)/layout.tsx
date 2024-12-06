@@ -8,12 +8,12 @@ interface LayoutProps {
 export default function AuthLayout({ children }: LayoutProps) {
   return (
     <div
-      style={{ backgroundImage: "url(/img/Background.png)" }}
-      className="relative bg-cover bg-center flex flex-col md:flex-row h-screen"
+      //   style={{ backgroundImage: "url(/images/auth_bg.svg)" }}
+      className="relative bg-[#F2C94C3D] bg-cover bg-center flex flex-col md:flex-row h-screen"
     >
       <a href="/">
         <Image
-          src="/icons/Logo.svg"
+          src="/images/logo_transparent.svg"
           alt="lottonownow"
           width={134}
           height={79.01}
@@ -22,21 +22,21 @@ export default function AuthLayout({ children }: LayoutProps) {
       </a>
 
       {/* Form Section */}
-      <section className="flex-1 scrollbar-hide flex items-center justify-center container">
+      <section className="flex-1 scrollbar-hide flex items-center w-full justify-center container">
         <div className="">{children}</div>
       </section>
 
       {/* Side Image Section */}
-      <section className="hidden md:hidden lg:flex relative pt-[70px] mr-16">
+      <section className="hidden md:hidden lg:flex relative h-screen">
         {/* <div className="relative w-full h-[500px]"> */}
         <Image
-          src="/img/Figma-Group.png"
+          src="/images/auth_bg.svg"
           height={967}
           width={724}
           // fill
           alt=""
           layout="responsive"
-          className="mx-auto max-w-[500px] sm:max-w-[600px] md:max-w-[724px]"
+          className="mx-auto w-full h-full"
         />
         {/* </div> */}
       </section>
