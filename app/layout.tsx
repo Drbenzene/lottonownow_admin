@@ -30,12 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ReactQueryClientProvider>
-      <html lang="en">
-        <body
-          // className={`${geistSans.variable} ${geistMono.variable} antialiased ${exo.className}`}
-          className={`antialiased ${exo.className}`}
-        >
+    <html lang="en">
+      <body
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased ${exo.className}`}
+        className={`antialiased ${exo.className}`}
+      >
+        <ReactQueryClientProvider>
           {children}
 
           <Toaster
@@ -46,8 +46,8 @@ export default function RootLayout({
               closeButton: true,
             }}
           />
-        </body>
-      </html>
-    </ReactQueryClientProvider>
+        </ReactQueryClientProvider>
+      </body>
+    </html>
   );
 }

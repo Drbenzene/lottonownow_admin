@@ -35,8 +35,7 @@ export default function AuthLayout({ children }: LayoutProps) {
           height={967}
           width={724}
           // fill
-          alt=""
-          layout="responsive"
+          alt="bg layout"
           className="mx-auto w-full h-full"
         />
         {/* </div> */}

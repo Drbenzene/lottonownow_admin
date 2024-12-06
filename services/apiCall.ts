@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "sonner";
 // const BASE_API_URL: any = process.env.NEXT_PUBLIC_API_URL;
-const BASE_API_URL = "http://localhost:4000/api/v1";
+const BASE_API_URL: any = process.env.NEXT_PUBLIC_BASE_URL;
 
 interface IAPICall {
   Url: string;

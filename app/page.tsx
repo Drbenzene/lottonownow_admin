@@ -9,7 +9,7 @@ export default function HomePage() {
 
   useEffect(() => {
     replace("/sign-in");
-  }, [replace]);
+  }, []);
 
   return <>{/* <Seo templateTitle="Home" /> */}</>;
 }
