@@ -34,8 +34,8 @@ const LottonownowSignin = () => {
           })}
           onSubmit={async (values, { setSubmitting }) => {
             const res = await signIn(values);
-            toast.success("Welcome Back");
             if (res) {
+              toast.success("Welcome Back");
               replace("/overview");
             }
             setSubmitting(false);
